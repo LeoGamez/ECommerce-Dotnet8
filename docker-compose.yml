@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  catalogdb:
+    image: postgres
+
+  ecommerce.catalog.api:
+    image: ${DOCKER_REGISTRY-}ecommercecatalogapi
+    build:
+      context: .
+      dockerfile: src/Services/Catalog/ECommerce.Catalog.API/Dockerfile
+
+volumes:
+  postgres_catalog:

@@ -1,9 +1,13 @@
 
 
+using ECommerce.Catalog.API.Data;
+using HealthChecks.UI.Client;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+
 var builder = WebApplication.CreateBuilder(args);
 
 var assembly = typeof(Program).Assembly;
-
+var productDbConnectionString = builder.Configuration.GetConnectionString("Database");
 //Add Dependencies  and services to DI
 builder.Services.AddMediatR(configuration =>
     {
@@ -20,10 +24,19 @@ builder.Services.AddCarter();
 
 builder.Services.AddMarten(options =>
 {
-    options.Connection(builder.Configuration.GetConnectionString("Database")!);
+    options.Connection(productDbConnectionString!);
 }).UseLightweightSessions();
 
+if (builder.Environment.IsDevelopment())
+{
+    builder.Services.InitializeMartenWith<CatalogInitialData>();
+}
+
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
+
+builder.Services.AddHealthChecks()
+    .AddNpgSql(productDbConnectionString!);
+
 
 var app = builder.Build();
 
@@ -32,6 +45,15 @@ app.MapCarter();
 
 //Custom Exception Handler 
 app.UseExceptionHandler(options => { });
+
+app.UseHealthChecks("/health",
+    new HealthCheckOptions
+    {
+        ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+    });
+
+// Run app
+app.Run();
 
 //-> removed to use custom Exception handler
 //app.UseExceptionHandler(exceptionHandlerApp => {
@@ -61,6 +83,5 @@ app.UseExceptionHandler(options => { });
 //    });
 //});
 
-// Run app
-app.Run();
+
 

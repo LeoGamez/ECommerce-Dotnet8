@@ -15,7 +15,7 @@ public class GetByIdProductValidator : AbstractValidator<GetProductByIdQuery>
     }
 }
 
-internal class GetProductByIdQueyHandler(IDocumentSession session, ILogger<GetProductByIdQueyHandler> logger) : IQueryHandler<GetProductByIdQuery, GetProductByIdResult>
+internal class GetProductByIdQueyHandler(IDocumentSession session) : IQueryHandler<GetProductByIdQuery, GetProductByIdResult>
 {
     public async Task<GetProductByIdResult> Handle(GetProductByIdQuery query, CancellationToken cancellationToken)
     {
@@ -23,7 +23,7 @@ internal class GetProductByIdQueyHandler(IDocumentSession session, ILogger<GetPr
 
         if (product == null)
         {
-            throw new ProductNotFoundException();
+            throw new ProductNotFoundException(query.Id);
         }
 
         return new GetProductByIdResult(product);

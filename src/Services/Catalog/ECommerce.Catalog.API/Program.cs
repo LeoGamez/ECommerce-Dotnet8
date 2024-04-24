@@ -1,8 +1,4 @@
-using Carter;
-using ECommerce.Shared.Behaviours;
-using FluentValidation;
-using Microsoft.AspNetCore.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +11,7 @@ builder.Services.AddMediatR(configuration =>
         configuration.RegisterServicesFromAssembly(assembly);
         //Add validation handlers
         configuration.AddOpenBehavior(typeof(ValidationBehaviour<,>));
+        configuration.AddOpenBehavior(typeof(LoggingBehaviour<,>));
     });
 
 builder.Services.AddValidatorsFromAssembly(assembly);
@@ -26,39 +23,43 @@ builder.Services.AddMarten(options =>
     options.Connection(builder.Configuration.GetConnectionString("Database")!);
 }).UseLightweightSessions();
 
+builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 
 var app = builder.Build();
 
 // Configure Http Pipeline
 app.MapCarter();
 
-//Custom Exception Handler
-app.UseExceptionHandler(exceptionHandlerApp => {
+//Custom Exception Handler 
+app.UseExceptionHandler(options => { });
 
-    exceptionHandlerApp.Run(async context => {
+//-> removed to use custom Exception handler
+//app.UseExceptionHandler(exceptionHandlerApp => {
 
-        var exception = context.Features.Get<IExceptionHandlerFeature>()?.Error;
-        if (exception == null)
-        {
-            return;
-        }
+//    exceptionHandlerApp.Run(async context => {
 
-        var problemDetails = new ProblemDetails
-        {
-            Title = exception.Message,
-            Status = StatusCodes.Status500InternalServerError,
-            Detail = exception.StackTrace,
-        };
+//        var exception = context.Features.Get<IExceptionHandlerFeature>()?.Error;
+//        if (exception == null)
+//        {
+//            return;
+//        }
 
-        var logger = context.RequestServices.GetRequiredService<ILogger<Program>>();
-        logger.LogError(exception, exception.Message);
+//        var problemDetails = new ProblemDetails
+//        {
+//            Title = exception.Message,
+//            Status = StatusCodes.Status500InternalServerError,
+//            Detail = exception.StackTrace,
+//        };
 
-        context.Response.StatusCode = StatusCodes.Status500InternalServerError;
-        context.Response.ContentType="application/problem+json";
+//        var logger = context.RequestServices.GetRequiredService<ILogger<Program>>();
+//        logger.LogError(exception, exception.Message);
 
-        await context.Response.WriteAsJsonAsync(problemDetails);
-    });
-});
+//        context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+//        context.Response.ContentType="application/problem+json";
+
+//        await context.Response.WriteAsJsonAsync(problemDetails);
+//    });
+//});
 
 // Run app
 app.Run();

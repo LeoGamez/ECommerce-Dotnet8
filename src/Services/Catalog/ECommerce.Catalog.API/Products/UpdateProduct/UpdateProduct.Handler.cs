@@ -15,6 +15,7 @@ public class UpdateProductValidator : AbstractValidator<UpdateProductCommand>
         RuleFor(x => x.Price).NotEmpty().WithMessage("Price is Required").GreaterThan(0).WithMessage("Price must be greater than 0");
     }
 }
+
 internal class UpdateProductCommandHandler(IDocumentSession session) : ICommandHandler<UpdateProductCommand, Unit>
 {
     public async Task<Unit> Handle(UpdateProductCommand command, CancellationToken cancellationToken)
@@ -23,7 +24,7 @@ internal class UpdateProductCommandHandler(IDocumentSession session) : ICommandH
         
         if(product == null)
         {
-            throw new ProductNotFoundException();
+            throw new ProductNotFoundException(command.Id);
         }
         product = command.Adapt<Product>();
         session.Update(product);

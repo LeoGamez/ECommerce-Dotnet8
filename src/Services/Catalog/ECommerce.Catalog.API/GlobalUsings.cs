@@ -5,3 +5,6 @@ global using MediatR;
 global using Marten;
 global using ECommerce.Shared.Abstractions;
 global using ECommerce.Catalog.API.Exceptions;
+global using ECommerce.Shared.Behaviours;
+global using ECommerce.Shared.Exceptions;
+global using FluentValidation;

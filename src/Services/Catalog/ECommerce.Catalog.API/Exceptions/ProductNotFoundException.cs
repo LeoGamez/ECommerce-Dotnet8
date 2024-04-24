@@ -1,18 +1,10 @@
-﻿
+﻿using ECommerce.Shared.Exceptions;
 
 namespace ECommerce.Catalog.API.Exceptions;
 
-public class ProductNotFoundException : Exception
+public class ProductNotFoundException : NotFoundException
 {
-    public ProductNotFoundException()
-    {
-    }
-
-    public ProductNotFoundException(string? message) : base(message)
-    {
-    }
-
-    public ProductNotFoundException(string? message, Exception? innerException) : base(message, innerException)
+    public ProductNotFoundException(Guid id) : base("Product",id)
     {
     }
 }

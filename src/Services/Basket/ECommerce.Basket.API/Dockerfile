@@ -10,6 +10,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["src/Services/Basket/ECommerce.Basket.API/ECommerce.Basket.API.csproj", "src/Services/Basket/ECommerce.Basket.API/"]
+COPY ["src/Shared/ECommerce.Shared/ECommerce.Shared.csproj", "src/Shared/ECommerce.Shared/"]
 RUN dotnet restore "./src/Services/Basket/ECommerce.Basket.API/ECommerce.Basket.API.csproj"
 COPY . .
 WORKDIR "/src/src/Services/Basket/ECommerce.Basket.API"

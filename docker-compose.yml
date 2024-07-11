@@ -4,12 +4,26 @@ services:
   catalogdb:
     image: postgres
 
+  basketdb:
+    image: postgres
+
+  distributedcache:
+    image: redis
+
   ecommerce.catalog.api:
     image: ${DOCKER_REGISTRY-}ecommercecatalogapi
     build:
       context: .
       dockerfile: src/Services/Catalog/ECommerce.Catalog.API/Dockerfile
 
+  ecommerce.basket.api:
+    image: ${DOCKER_REGISTRY-}ecommercebasketapi
+    build:
+      context: .
+      dockerfile: src/Services/Basket/ECommerce.Basket.API/Dockerfile
+
+
 volumes:
   postgres_catalog:
+  postgres_basket:
 

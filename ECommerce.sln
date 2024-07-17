@@ -17,11 +17,16 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basket", "Basket", "{6CC48BB1-3150-4287-8016-306A13D9611F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.Basket.API", "src\Services\Basket\ECommerce.Basket.API\ECommerce.Basket.API.csproj", "{B9B4AFF2-1D89-4C1C-9655-C82B0D42AB05}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerce.Basket.API", "src\Services\Basket\ECommerce.Basket.API\ECommerce.Basket.API.csproj", "{B9B4AFF2-1D89-4C1C-9655-C82B0D42AB05}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Discount", "Discount", "{7DD38F5A-421B-44FF-875B-46FF635EA563}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.Discount.Grpc", "src\Services\Discount\ECommerce.Discount.Grpc\ECommerce.Discount.Grpc.csproj", "{92D0A389-4698-4EAE-9BB4-CFDDF106BF34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerce.Discount.Grpc", "src\Services\Discount\ECommerce.Discount.Grpc\ECommerce.Discount.Grpc.csproj", "{92D0A389-4698-4EAE-9BB4-CFDDF106BF34}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionFiles", "SolutionFiles", "{27C2E265-19EB-4D06-964F-6578F48728A9}"
+	ProjectSection(SolutionItems) = preProject
+		dockerCommands.txt = dockerCommands.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

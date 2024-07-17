@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ECommerce.Discount.Grpc.Migrations
 {
-    [DbContext(typeof(DiscountCountext))]
+    [DbContext(typeof(DiscountContext))]
     partial class DiscountCountextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddGrpc();
 
-builder.Services.AddDbContext<DiscountCountext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("Database")));
+builder.Services.AddDbContext<DiscountContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("Database")));
 
 var app = builder.Build();
 

@@ -2,11 +2,11 @@
 using Microsoft.EntityFrameworkCore;
 
 namespace ECommerce.Discount.Grpc.Data;
-public class DiscountCountext : DbContext
+public class DiscountContext : DbContext
 {
     public DbSet<Coupon> Coupons { get; set; }
 
-    public DiscountCountext(DbContextOptions<DiscountCountext> options) : base(options)
+    public DiscountContext(DbContextOptions<DiscountContext> options) : base(options)
     {
 
     }

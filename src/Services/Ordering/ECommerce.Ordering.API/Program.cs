@@ -1,22 +1,20 @@
+using ECommerce.Ordering.API;
+using ECommerce.Ordering.Application;
+using ECommerce.Ordering.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//Application Services
-var assembly = typeof(Program).Assembly;
-var productDbConnectionString = builder.Configuration.GetConnectionString("Database");
+//Add services to the application
 
-builder.Services.AddMediatR(configuration =>
-{
-    //Add Handlers 
-    configuration.RegisterServicesFromAssembly(assembly);
-    //Add validation handlers
-    configuration.AddOpenBehavior(typeof(ValidationBehaviour<,>));
-    configuration.AddOpenBehavior(typeof(LoggingBehaviour<,>));
-});
+builder.Services
+       .AddApplicationServices()
+       .AddInfrastructureServices(builder.Configuration)
+       .AddWebServices();
 
 
 var app = builder.Build();
 
 // Configure the Http Request Pipeline
+app.UseWebServices();
 
 app.Run();

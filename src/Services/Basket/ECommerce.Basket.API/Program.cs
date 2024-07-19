@@ -1,3 +1,4 @@
+using ECommerce.Discount.Grpc;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 
@@ -7,7 +8,8 @@ var assembly = typeof(Program).Assembly;
 var dbConnectionString = builder.Configuration.GetConnectionString("Database");
 var redisConnectionString = builder.Configuration.GetConnectionString("Redis");
 
-//Add services
+//Applictation Services services
+builder.Services.AddCarter();
 builder.Services.AddMediatR(configuration =>
 {
     //Add Handlers 
@@ -17,9 +19,7 @@ builder.Services.AddMediatR(configuration =>
     configuration.AddOpenBehavior(typeof(LoggingBehaviour<,>));
 });
 
-builder.Services.AddValidatorsFromAssembly(assembly);
-builder.Services.AddCarter();
-
+//Data Services
 builder.Services.AddMarten(options =>
 {
     options.Connection(dbConnectionString!);
@@ -30,10 +30,26 @@ builder.Services.AddStackExchangeRedisCache(options => {
     options.Configuration = redisConnectionString;
 });
 
-builder.Services.AddScoped<IBasketRepository,BasketRepository>();
-builder.Services.Decorate<IBasketRepository,CachedBasketRepository>();
+//Infrastructure
+builder.Services.AddScoped<IBasketRepository, BasketRepository>();
+builder.Services.Decorate<IBasketRepository, CachedBasketRepository>();
 
+builder.Services.AddGrpcClient<DiscountProto.DiscountProtoClient>(options =>
+{
+    options.Address = new Uri(builder.Configuration["GrpcSettings:DiscountUrl"]!);
+}).ConfigurePrimaryHttpMessageHandler(() => {
+    //! This should only be used in Development Environment
+    var handler = new HttpClientHandler() { 
+        ServerCertificateCustomValidationCallback= HttpClientHandler.DangerousAcceptAnyServerCertificateValidator,
+    };
+    return handler;
+}); 
+
+
+//"Cross-Cutting" Services
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
+builder.Services.AddValidatorsFromAssembly(assembly);
+
 
 builder.Services.AddHealthChecks()
     .AddNpgSql(dbConnectionString!)

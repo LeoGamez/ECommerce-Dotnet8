@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using ECommerce.Ordering.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ECommerce.Ordering.Infrastructure;
@@ -9,7 +11,10 @@ public static class DependencyInjection
     {
         var connectionString = configuration.GetConnectionString("Database");
 
-        //Add DbContext for EFCore
+        services.AddDbContext<ApplicationDbContext>(options => {
+            //options.AddInterceptors();
+            options.UseSqlServer(connectionString);
+        });
 
         return services;
     }

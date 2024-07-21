@@ -10,6 +10,9 @@ services:
   distributedcache:
     image: redis
 
+  orderDb:
+    image: mcr.microsoft.com/mssql/server
+
   ecommerce.catalog.api:
     image: ${DOCKER_REGISTRY-}ecommercecatalogapi
     build:

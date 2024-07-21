@@ -1,10 +1,10 @@
-﻿using ECommerce.Ordering.Domain.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using ECommerce.Ordering.Application.Data;
+using ECommerce.Ordering.Domain.Models;
 using System.Reflection;
 
 namespace ECommerce.Ordering.Infrastructure.Data;
 
-public class ApplicationDbContext : DbContext
+public class ApplicationDbContext : DbContext, IApplicationDbContext
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options) { }

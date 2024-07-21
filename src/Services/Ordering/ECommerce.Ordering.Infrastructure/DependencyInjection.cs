@@ -1,4 +1,5 @@
 ﻿
+using ECommerce.Ordering.Application.Data;
 using ECommerce.Ordering.Infrastructure.Data.Interceptors;
 using MediatR;
 using Microsoft.EntityFrameworkCore.Diagnostics;
@@ -21,6 +22,7 @@ public static class DependencyInjection
                                     new DomainEventsDispatchInterceptor(sp.GetRequiredService<IMediator>()));
             options.UseSqlServer(connectionString);
         });
+        services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
 
         return services;
     }

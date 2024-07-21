@@ -38,9 +38,8 @@ public sealed class Order : Aggregate<OrderId>
         return order;
     }
 
-    public void Update(CustomerId customerId, OrderName orderName, Address shippingAddress, Address billingAddress, Payment payment, OrderStatus orderStatus)
+    public void Update(OrderName orderName, Address shippingAddress, Address billingAddress, Payment payment, OrderStatus orderStatus)
     {
-        CustomerId = customerId;
         OrderName = orderName;
         ShippingAddress = shippingAddress;
         BillingAddress = billingAddress;

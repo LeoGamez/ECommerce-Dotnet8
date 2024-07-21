@@ -1,4 +1,4 @@
-﻿namespace ECommerce.Ordering.Application.Orders.Commands.DeleteOrder.DeleteOrder
+﻿namespace ECommerce.Ordering.Application.Orders.Commands.DeleteOrder
 {
     public class DeleteOrderCommandHandler(IApplicationDbContext dbContext) : ICommandHandler<DeleteOrderCommand, DeleteOrderResult>
     {

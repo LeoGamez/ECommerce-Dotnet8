@@ -1,5 +1,4 @@
 ﻿using ECommerce.Ordering.Domain.Events;
-using MediatR;
 using Microsoft.Extensions.Logging;
 
 namespace ECommerce.Ordering.Application.Orders.EventHandlers;

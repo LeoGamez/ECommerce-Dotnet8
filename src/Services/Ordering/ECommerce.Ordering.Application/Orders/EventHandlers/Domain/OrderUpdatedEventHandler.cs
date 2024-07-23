@@ -2,7 +2,7 @@
 using MediatR;
 using Microsoft.Extensions.Logging;
 
-namespace ECommerce.Ordering.Application.Orders.EventHandlers;
+namespace ECommerce.Ordering.Application.Orders.EventHandlers.Domain;
 
 public class OrderUpdatedEventHandler(ILogger<OrderUpdatedEventHandler> logger) : INotificationHandler<OrderUpdatedEvent>
 {

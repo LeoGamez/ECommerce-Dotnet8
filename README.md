@@ -10,8 +10,8 @@ This repo is for showcasing .net 8 Docker Containerized application using a Micr
 - Domain Driven Design
 - Clean Architecture
 - Minimal APIs
+- Microservice async communication
 - Todo: Blazor SSR with Interactive WASM and Server
-- Todo: Test Driven Design
 - Todo: UnitTesting
 - Todo: Integration Testing
 - Todo: E2E Testing
@@ -24,5 +24,6 @@ This repo is for showcasing .net 8 Docker Containerized application using a Micr
 - Use of FluentValidation for request validation
 - Use of MediatR for middleware pipeline managing and CQRS design pattern and Mediator
 - GRPC for better formance in microservice inter-communication
-- MassTransit with RabbitMQ for AMQP
+- MassTransit with RabbitMQ for AMQP and Publish-Subscribe pattern and Outbox-Table pattern and SAGA pattern
 - Entity Framework Core with MSSQL
+- AspNet FeatureManagement for feature flags

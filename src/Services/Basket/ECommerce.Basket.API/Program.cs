@@ -1,6 +1,7 @@
 using ECommerce.Discount.Grpc;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using ECommerce.Shared.Messaging.MassTransit;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -45,15 +46,15 @@ builder.Services.AddGrpcClient<DiscountProto.DiscountProtoClient>(options =>
     return handler;
 }); 
 
-
 //"Cross-Cutting" Services
 builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 builder.Services.AddValidatorsFromAssembly(assembly);
 
-
 builder.Services.AddHealthChecks()
     .AddNpgSql(dbConnectionString!)
     .AddRedis(redisConnectionString!);
+
+builder.Services.AddMessageBroker(builder.Configuration);
 
 var app = builder.Build();
 

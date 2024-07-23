@@ -13,6 +13,9 @@ services:
   orderDb:
     image: mcr.microsoft.com/mssql/server
 
+  messagebroker:
+    image: rabbitmq:management
+
   ecommerce.catalog.api:
     image: ${DOCKER_REGISTRY-}ecommercecatalogapi
     build:
@@ -24,7 +27,6 @@ services:
     build:
       context: .
       dockerfile: src/Services/Basket/ECommerce.Basket.API/Dockerfile
-
 
   ecommerce.discount.grpc:
     image: ${DOCKER_REGISTRY-}ecommercediscountgrpc

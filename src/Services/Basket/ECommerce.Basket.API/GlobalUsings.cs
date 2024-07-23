@@ -9,4 +9,4 @@ global using ECommerce.Shared.Behaviours;
 global using ECommerce.Shared.Exceptions;
 global using ECommerce.Basket.API.Exceptions;
 global using ECommerce.Basket.API.Infrastructure;
-
+global using ECommerce.Basket.API.Dtos;

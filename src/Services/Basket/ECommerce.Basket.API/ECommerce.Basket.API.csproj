@@ -22,11 +22,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Dtos\" />
     <Folder Include="GrpcServices\" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\ECommerce.Shared.Messaging\ECommerce.Shared.Messaging.csproj" />
     <ProjectReference Include="..\..\..\Shared\ECommerce.Shared\ECommerce.Shared.csproj" />
   </ItemGroup>
 

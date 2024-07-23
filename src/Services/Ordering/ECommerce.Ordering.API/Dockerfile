@@ -10,6 +10,11 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["src/Services/Ordering/ECommerce.Ordering.API/ECommerce.Ordering.API.csproj", "src/Services/Ordering/ECommerce.Ordering.API/"]
+COPY ["src/Shared/ECommerce.Shared/ECommerce.Shared.csproj", "src/Shared/ECommerce.Shared/"]
+COPY ["src/Services/Ordering/ECommerce.Ordering.Application/ECommerce.Ordering.Application.csproj", "src/Services/Ordering/ECommerce.Ordering.Application/"]
+COPY ["src/Shared/ECommerce.Shared.Messaging/ECommerce.Shared.Messaging.csproj", "src/Shared/ECommerce.Shared.Messaging/"]
+COPY ["src/Services/Ordering/ECommerce.Ordering.Domain/ECommerce.Ordering.Domain.csproj", "src/Services/Ordering/ECommerce.Ordering.Domain/"]
+COPY ["src/Services/Ordering/ECommerce.Ordering.Infrastructure/ECommerce.Ordering.Infrastructure.csproj", "src/Services/Ordering/ECommerce.Ordering.Infrastructure/"]
 RUN dotnet restore "./src/Services/Ordering/ECommerce.Ordering.API/ECommerce.Ordering.API.csproj"
 COPY . .
 WORKDIR "/src/src/Services/Ordering/ECommerce.Ordering.API"

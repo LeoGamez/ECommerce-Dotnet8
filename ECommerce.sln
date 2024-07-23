@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.Ordering.Infrastr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.Ordering.Application", "src\Services\Ordering\ECommerce.Ordering.Application\ECommerce.Ordering.Application.csproj", "{CFF9C83D-AA29-44D4-B574-AA60AF645F36}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.Shared.Messaging", "src\Shared\ECommerce.Shared.Messaging\ECommerce.Shared.Messaging.csproj", "{DFA10051-14EE-453E-B8EF-BCE9554B98E0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{CFF9C83D-AA29-44D4-B574-AA60AF645F36}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFF9C83D-AA29-44D4-B574-AA60AF645F36}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFF9C83D-AA29-44D4-B574-AA60AF645F36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFA10051-14EE-453E-B8EF-BCE9554B98E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFA10051-14EE-453E-B8EF-BCE9554B98E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFA10051-14EE-453E-B8EF-BCE9554B98E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFA10051-14EE-453E-B8EF-BCE9554B98E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -98,6 +104,7 @@ Global
 		{9C812A17-1E88-4F41-8CA7-3044600CA6FF} = {6E4A1BE2-DAC4-4725-AA13-3CE6BDD08A9F}
 		{1281A018-2D7C-4123-A446-EED8EC96A0F0} = {6E4A1BE2-DAC4-4725-AA13-3CE6BDD08A9F}
 		{CFF9C83D-AA29-44D4-B574-AA60AF645F36} = {6E4A1BE2-DAC4-4725-AA13-3CE6BDD08A9F}
+		{DFA10051-14EE-453E-B8EF-BCE9554B98E0} = {FC9C23B0-A466-4DDD-A76B-668F6E15B738}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BE882A6A-7AE1-472E-BEE1-20767E5A531B}

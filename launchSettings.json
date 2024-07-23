@@ -5,7 +5,8 @@
       "commandVersion": "1.0",
       "serviceActions": {
         "ecommerce.catalog.api": "StartDebugging",
-        "ecommerce.discount.grpc": "StartDebugging"
+        "ecommerce.discount.grpc": "StartDebugging",
+        "ecommerce.ordering.api": "StartDebugging"
       }
     }
   }

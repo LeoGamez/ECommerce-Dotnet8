@@ -1,6 +1,4 @@
-﻿using ECommerce.Catalog.API.Products.CreateProduct;
-using ECommerce.Shared.Abstractions;
-using Marten.Pagination;
+﻿using Marten.Pagination;
 
 namespace ECommerce.Catalog.API.Products.GetProducts;
 

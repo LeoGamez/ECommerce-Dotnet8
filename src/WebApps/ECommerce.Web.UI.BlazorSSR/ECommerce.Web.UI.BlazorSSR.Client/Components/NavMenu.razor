@@ -1,0 +1,18 @@
+﻿@using MudBlazor
+
+@inject ISnackbar Snackbar
+
+<MudNavMenu>
+    <MudNavLink Href="/" Match="NavLinkMatch.All">Home</MudNavLink>
+    <MudNavLink Href="/products" Match="NavLinkMatch.Prefix">Product</MudNavLink>
+    <MudNavLink Href="/orders" Match="NavLinkMatch.Prefix">Orders</MudNavLink>
+    <MudNavLink Href="/cart" Match="NavLinkMatch.Prefix">Cart</MudNavLink>
+    <MudNavLink>
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" @onclick="@(() => Snackbar.Add("Simple Snackbar"))">
+            Test Snackbar
+        </MudButton>
+    </MudNavLink>
+</MudNavMenu>
+
+
+

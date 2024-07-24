@@ -27,3 +27,7 @@ This repo is for showcasing .net 8 Docker Containerized application using a Micr
 - MassTransit with RabbitMQ for AMQP and Publish-Subscribe pattern and Outbox-Table pattern and SAGA pattern
 - Entity Framework Core with MSSQL
 - AspNet FeatureManagement for feature flags
+
+Demo of E-Commerce with MUDBlazor Interactivity using .NET8 SSR
+
+![Alt Text](/demo-ecommercee.gif)

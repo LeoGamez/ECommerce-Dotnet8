@@ -361,3 +361,4 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/src/WebApps/ECommerce.Web.UI.BlazorSSR/ECommerce.Web.UI.BlazorSSR/appsettings.local.json

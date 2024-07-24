@@ -4,9 +4,15 @@
 <MudPopoverProvider />
 <MudDialogProvider />
 <MudSnackbarProvider />
-<MudAppBar>
+<MudAppBar Dense="true" Style="padding-top:5px;">
     <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
-    E-Commerce 
+    <MudIconButton Icon="@Icons.Material.Filled.Home" Color="Color.Inherit" Edge="Edge.Start" Href="/" />
+    E-Commerce
+    <MudSpacer />
+    <MudIconButton Icon="@Icons.Material.Filled.ShoppingCart" Color="Color.Inherit" Href="/cart"/>
+    <MudIconButton Icon="@Icons.Material.Filled.Person" Color="Color.Inherit" />
+    Guest
+    <MudIconButton Icon="@Icons.Material.Filled.Login" Color="Color.Inherit"  />
 </MudAppBar>
 <MudDrawer @bind-Open="@_drawerOpen" Variant="@DrawerVariant.Temporary" Style="position:fixed;top:0;height:100vh;">
     <NavMenu />

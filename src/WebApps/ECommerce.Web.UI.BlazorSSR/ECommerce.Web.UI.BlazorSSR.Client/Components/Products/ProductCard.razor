@@ -1,0 +1,22 @@
+﻿@rendermode InteractiveAuto
+
+<MudCard style="min-width:250px;margin-right:1rem;white-space: break-spaces;text-align:justify;quotes: auto;">
+    <MudCardMedia Image="@($"/images/product/{Product.ImageFile}")" Height="200" />
+    <MudCardContent>
+        <MudText Typo="Typo.h5">@Product.Name</MudText>
+        <MudText Typo="Typo.body2">@Product.Description</MudText>
+        <MudText Typo="Typo.body2">
+            @foreach (var category in Product.Category)
+            {
+                <MudChip Text="@category" Color="Color.Primary" Value="@Color.Primary"></MudChip>
+            }
+        </MudText>
+    </MudCardContent>
+    <MudCardActions Style="justify-content: center">
+        <MudButtonGroup Color="Color.Primary" Variant="Variant.Filled" Size="Size.Small">
+            <MudIconButton Icon="@Icons.Material.Filled.AddShoppingCart"></MudIconButton>
+            <MudButton>Add To Cart</MudButton>
+            <MudButton>$ @Product.Price</MudButton>
+        </MudButtonGroup>
+    </MudCardActions>
+</MudCard>

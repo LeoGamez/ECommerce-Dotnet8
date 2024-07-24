@@ -43,7 +43,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerce.Shared.Messaging"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateways", "ApiGateways", "{F7D70019-4220-48E0-9C98-81FE984093A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.API.Gateway", "src\ApiGateways\ECommerce.API.Gateway\ECommerce.API.Gateway.csproj", "{0D10B378-11F5-49CA-97E2-AB11446E33CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerce.API.Gateway", "src\ApiGateways\ECommerce.API.Gateway\ECommerce.API.Gateway.csproj", "{0D10B378-11F5-49CA-97E2-AB11446E33CF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApps", "WebApps", "{25C4DA00-D2A3-4B4A-8ED2-52E2E7A9C520}"
 EndProject

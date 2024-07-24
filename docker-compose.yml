@@ -46,6 +46,13 @@ services:
       context: .
       dockerfile: src/ApiGateways/ECommerce.API.Gateway/Dockerfile
 
+  ecommerce.web.ui.blazorssr:
+    image: ${DOCKER_REGISTRY-}ecommercewebuiblazorssr
+    build:
+      context: .
+      dockerfile: src/WebApps/ECommerce.Web.UI.BlazorSSR/ECommerce.Web.UI.BlazorSSR/Dockerfile
+
 volumes:
   postgres_catalog:
   postgres_basket:
+

@@ -10,6 +10,7 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["src/WebApps/ECommerce.Web.UI.BlazorSSR/ECommerce.Web.UI.BlazorSSR/ECommerce.Web.UI.BlazorSSR.csproj", "src/WebApps/ECommerce.Web.UI.BlazorSSR/ECommerce.Web.UI.BlazorSSR/"]
+COPY ["src/WebApps/ECommerce.Web.UI.BlazorSSR.Shared/ECommerce.Web.UI.BlazorSSR.Shared.csproj", "src/WebApps/ECommerce.Web.UI.BlazorSSR.Shared/"]
 COPY ["src/WebApps/ECommerce.Web.UI.BlazorSSR/ECommerce.Web.UI.BlazorSSR.Client/ECommerce.Web.UI.BlazorSSR.Client.csproj", "src/WebApps/ECommerce.Web.UI.BlazorSSR/ECommerce.Web.UI.BlazorSSR.Client/"]
 RUN dotnet restore "./src/WebApps/ECommerce.Web.UI.BlazorSSR/ECommerce.Web.UI.BlazorSSR/ECommerce.Web.UI.BlazorSSR.csproj"
 COPY . .

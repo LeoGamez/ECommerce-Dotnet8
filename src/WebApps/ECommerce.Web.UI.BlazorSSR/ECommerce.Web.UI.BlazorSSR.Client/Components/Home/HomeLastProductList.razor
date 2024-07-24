@@ -1,4 +1,5 @@
-﻿@rendermode InteractiveAuto
+﻿@using ECommerce.Web.UI.BlazorSSR.Client.Components.Products
+@rendermode InteractiveAuto
 
 <MudPaper>
     <MudExpansionPanels>
@@ -17,23 +18,7 @@
                     <div style="display: flex; overflow-x: auto; white-space: nowrap; padding: 1rem;">
                         @foreach (var product in products)
                         {
-                            <MudCard style="min-width:250px;margin-right:1rem;white-space: break-spaces;text-align:justify;quotes: auto;">
-                                <MudCardMedia Image="@($"/images/product/{product.ImageFile}")" Height="200" />
-                                <MudCardContent>
-                                    <MudText Typo="Typo.h5">@product.Name</MudText>
-                                    <MudText Typo="Typo.body2">@product.Description</MudText>
-                                    <MudText Typo="Typo.body2">
-                                        @foreach (var category in product.Category)
-                                        {
-                                            <MudChip Text="@category" Color="Color.Primary" Value="@Color.Primary"></MudChip>
-                                        }
-                                    </MudText>
-                                </MudCardContent>
-                                <MudCardActions>
-                                    <MudText Typo="Typo.body2">$@product.Price</MudText>
-                                    <MudButton Variant="Variant.Text" Color="Color.Primary">Learn More</MudButton>
-                                </MudCardActions>
-                            </MudCard>
+                            <ProductCard Product="product"/>
                         }
                     </div>
                 }

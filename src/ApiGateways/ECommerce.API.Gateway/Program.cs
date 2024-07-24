@@ -16,12 +16,9 @@ builder.Services.AddRateLimiter(rateLimiterOptions =>
     });
 });
 
-
 var app = builder.Build();
 
 //Configure http pipeline
-
 app.UseRateLimiter();
 app.MapReverseProxy();
-
 app.Run();

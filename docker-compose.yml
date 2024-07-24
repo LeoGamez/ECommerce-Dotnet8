@@ -40,6 +40,12 @@ services:
       context: .
       dockerfile: src/Services/Ordering/ECommerce.Ordering.API/Dockerfile
 
+  ecommerce.api.gateway:
+    image: ${DOCKER_REGISTRY-}ecommerceapigateway
+    build:
+      context: .
+      dockerfile: src/ApiGateways/ECommerce.API.Gateway/Dockerfile
+
 volumes:
   postgres_catalog:
   postgres_basket:

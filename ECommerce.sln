@@ -41,6 +41,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.Ordering.Applicat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.Shared.Messaging", "src\Shared\ECommerce.Shared.Messaging\ECommerce.Shared.Messaging.csproj", "{DFA10051-14EE-453E-B8EF-BCE9554B98E0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateways", "ApiGateways", "{F7D70019-4220-48E0-9C98-81FE984093A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.API.Gateway", "src\ApiGateways\ECommerce.API.Gateway\ECommerce.API.Gateway.csproj", "{0D10B378-11F5-49CA-97E2-AB11446E33CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +91,10 @@ Global
 		{DFA10051-14EE-453E-B8EF-BCE9554B98E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DFA10051-14EE-453E-B8EF-BCE9554B98E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DFA10051-14EE-453E-B8EF-BCE9554B98E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D10B378-11F5-49CA-97E2-AB11446E33CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D10B378-11F5-49CA-97E2-AB11446E33CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D10B378-11F5-49CA-97E2-AB11446E33CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D10B378-11F5-49CA-97E2-AB11446E33CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -105,6 +113,7 @@ Global
 		{1281A018-2D7C-4123-A446-EED8EC96A0F0} = {6E4A1BE2-DAC4-4725-AA13-3CE6BDD08A9F}
 		{CFF9C83D-AA29-44D4-B574-AA60AF645F36} = {6E4A1BE2-DAC4-4725-AA13-3CE6BDD08A9F}
 		{DFA10051-14EE-453E-B8EF-BCE9554B98E0} = {FC9C23B0-A466-4DDD-A76B-668F6E15B738}
+		{0D10B378-11F5-49CA-97E2-AB11446E33CF} = {F7D70019-4220-48E0-9C98-81FE984093A3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BE882A6A-7AE1-472E-BEE1-20767E5A531B}

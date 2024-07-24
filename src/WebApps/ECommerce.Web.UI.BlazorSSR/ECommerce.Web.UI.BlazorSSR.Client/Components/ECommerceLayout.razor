@@ -1,0 +1,21 @@
+﻿@using MudBlazor
+@rendermode InteractiveAuto
+<MudThemeProvider IsDarkMode="true" />
+<MudPopoverProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
+<MudAppBar>
+    <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
+    E-Commerce 
+</MudAppBar>
+<MudDrawer @bind-Open="@_drawerOpen" Variant="@DrawerVariant.Temporary" Style="position:fixed;top:0;height:100vh;">
+    <NavMenu />
+</MudDrawer>
+@code {
+    bool _drawerOpen = false;
+
+    void DrawerToggle()
+    {
+        _drawerOpen = !_drawerOpen;
+    }
+}

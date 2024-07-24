@@ -1,4 +1,6 @@
+using Carter;
 using ECommerce.Web.UI.BlazorSSR.Components;
+using MudBlazor.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,6 +27,10 @@ builder.Services.AddRefitClient<IOrderingService>()
         c.BaseAddress = new Uri(gatewayUrl!);
     });
 
+builder.Services.AddMudServices();
+
+builder.Services.AddCarter();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -43,6 +49,8 @@ app.UseHttpsRedirection();
 
 app.UseStaticFiles();
 app.UseAntiforgery();
+
+app.MapCarter();
 
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode()

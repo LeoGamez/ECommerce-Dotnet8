@@ -1,0 +1,14 @@
+﻿
+@namespace ECommerce.Web.UI.BlazorSSR.Client.Components.Home
+@rendermode InteractiveAuto
+
+@if (itemQuantity == 0)
+{
+    <MudIconButton Icon="@Icons.Material.Filled.ShoppingCart" Color="Color.Inherit" Href="/cart" />
+}
+else
+{
+    <MudBadge Content="@itemQuantity" Color="Color.Error" Overlap="true" Class="mx-6 my-4" Origin="Origin.TopLeft">
+        <MudIconButton Icon="@Icons.Material.Filled.ShoppingCart" Color="Color.Inherit" Href="/cart" />
+    </MudBadge>
+}

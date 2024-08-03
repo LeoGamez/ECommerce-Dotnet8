@@ -47,11 +47,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerce.API.Gateway", "sr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApps", "WebApps", "{25C4DA00-D2A3-4B4A-8ED2-52E2E7A9C520}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.Web.UI.BlazorSSR", "src\WebApps\ECommerce.Web.UI.BlazorSSR\ECommerce.Web.UI.BlazorSSR\ECommerce.Web.UI.BlazorSSR.csproj", "{3F8B4164-F662-4BA4-B4E3-F6184201CCB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerce.Web.UI.BlazorSSR", "src\WebApps\ECommerce.Web.UI.BlazorSSR\ECommerce.Web.UI.BlazorSSR\ECommerce.Web.UI.BlazorSSR.csproj", "{3F8B4164-F662-4BA4-B4E3-F6184201CCB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.Web.UI.BlazorSSR.Client", "src\WebApps\ECommerce.Web.UI.BlazorSSR\ECommerce.Web.UI.BlazorSSR.Client\ECommerce.Web.UI.BlazorSSR.Client.csproj", "{2857095B-1BB9-4F4E-AEBC-733EBE309236}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerce.Web.UI.BlazorSSR.Client", "src\WebApps\ECommerce.Web.UI.BlazorSSR\ECommerce.Web.UI.BlazorSSR.Client\ECommerce.Web.UI.BlazorSSR.Client.csproj", "{2857095B-1BB9-4F4E-AEBC-733EBE309236}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.Web.UI.BlazorSSR.Shared", "src\WebApps\ECommerce.Web.UI.BlazorSSR.Shared\ECommerce.Web.UI.BlazorSSR.Shared.csproj", "{42E7261F-76EB-46AA-B6B4-3B641EDA34AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerce.Web.UI.BlazorSSR.Shared", "src\WebApps\ECommerce.Web.UI.BlazorSSR.Shared\ECommerce.Web.UI.BlazorSSR.Shared.csproj", "{42E7261F-76EB-46AA-B6B4-3B641EDA34AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -4,10 +4,17 @@ using MudBlazor.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+//For local debugging, must be added to git-ignore so Publish settings are not affected
+builder.Configuration.AddJsonFile(
+                "appsettings.Local.json",
+                 optional: true,
+                 reloadOnChange: true);
+
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
+
 
 var gatewayUrl = builder.Configuration["ApiSettings:GatewayAddress"];
 

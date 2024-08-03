@@ -10,5 +10,4 @@ builder.Services.AddRefitClient<IBasketService>().ConfigureHttpClient(c => c.Bas
 builder.Services.AddRefitClient<IOrderingService>().ConfigureHttpClient(c => c.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress));
 
 builder.Services.AddMudServices();
-
 await builder.Build().RunAsync();

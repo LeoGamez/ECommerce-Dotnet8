@@ -1,4 +1,5 @@
-﻿@using MudBlazor
+﻿@using ECommerce.Web.UI.BlazorSSR.Client.Components.Home
+@using MudBlazor
 @rendermode InteractiveAuto
 <MudThemeProvider IsDarkMode="true" />
 <MudPopoverProvider />
@@ -7,9 +8,9 @@
 <MudAppBar Dense="true" Style="padding-top:5px;">
     <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
     <MudIconButton Icon="@Icons.Material.Filled.Home" Color="Color.Inherit" Edge="Edge.Start" Href="/" />
-    E-Commerce
+       E-Commerce
     <MudSpacer />
-    <MudIconButton Icon="@Icons.Material.Filled.ShoppingCart" Color="Color.Inherit" Href="/cart"/>
+    <HomeShoppingCartLink/>
     <MudIconButton Icon="@Icons.Material.Filled.Person" Color="Color.Inherit" />
     Guest
     <MudIconButton Icon="@Icons.Material.Filled.Login" Color="Color.Inherit"  />

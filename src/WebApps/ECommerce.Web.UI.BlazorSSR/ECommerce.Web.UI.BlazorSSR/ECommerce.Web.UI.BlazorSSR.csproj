@@ -19,6 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Components\Home\" />
+    <Folder Include="Ordering\" />
     <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
